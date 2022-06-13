@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Articles extends Model
 {
-    use HasFactory;
+    protected $table = 'articles';
+    protected $fillable = ['id', 'title','content','image', 'user_id', 'category_id'];
 }

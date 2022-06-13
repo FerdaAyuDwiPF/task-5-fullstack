@@ -23,3 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/login', [PassportController::class, 'login']);
 Route::middleware('auth:api')->get('/all', [PassportController::class, 'users']);
+
+Route::get('/articles', 'App\Http\Controllers\ApiController@index');
+Route::post('/articles', 'App\Http\Controllers\ApiController@create');
+Route::patch('/articles/{id}', 'App\Http\Controllers\ApiController@update');
+Route::delete('/articles/{id}', 'App\Http\Controllers\ApiController@delete');
